@@ -1,11 +1,18 @@
+"use client"; // optional if you make it a Client Component
+import { use } from "react";
+import { notFound } from "next/navigation";
+import propertiesData from "@/constants/propertiesData";
 import ProjectViewPage from "./ProjectViewPage";
 
-export default async function Page({ params }) {
+export default function Page({ params: paramsPromise }) {
+  const params = use(paramsPromise); // unwrap the Promise
   const { purl } = params;
-  
-  // Example: Fetch project data
-//   const res = await fetch(`https://api.example.com/projects/${purl}`);
-//   const project = await res.json();
-  
-  return <ProjectViewPage purl={purl} />;
+
+  const project = propertiesData.find((p) => p.slug === purl);
+
+  if (!project) {
+    notFound();
+  }
+
+  return <ProjectViewPage key={project.slug} project={project} />;
 }
