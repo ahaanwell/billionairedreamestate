@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assetz Mizumi Reserve | Kudlu, Harlur road Near HSR layout Bangalore</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white">
+        <div class="max-w-7xl mx-auto px-6 py-1 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="/listingwebsite">
+                    <img 
+                    class="w-[120px]"
+                    src="./Assist/logo.webp" alt="">
+                </a>
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#overview" class="text-gray-700 hover:text-[#2a496c] font-medium">Overview</a>
+                <a href="#floorplan" class="text-gray-700 hover:text-[#2a496c] font-medium">Floor Plans</a>
+                <a href="#amenities" class="text-gray-700 hover:text-[#2a496c] font-medium">Amenities</a>
+                <a href="#location" class="text-gray-700 hover:text-[#2a496c] font-medium">Location</a>
+                <a href="#price" class="text-gray-700 hover:text-[#2a496c] font-medium">Pricing</a>
+                <a href="#gallery" class="text-gray-700 hover:text-[#2a496c] font-medium">Gallery</a>
+                <button onclick="openModal()" class="gradient-gold px-4 py-2 text-white rounded-full shadow">Enquire Now</button>
+                <a href="/listingwebsite">
+                    <img 
+                    class="w-[120px]"
+                    src="./Assist/mizumilogo.png" alt="">
+                </a>
+            </div>
+            <button class="md:hidden text-gray-700" onclick="toggleMenu()">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <a href="/listingwebsite" class="md:hidden">
+                    <img 
+                    class="w-[120px]"
+                    src="./Assist/mizumilogo.png" alt="">
+                </a>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden fixed inset-0 bg-white z-40 pt-20">
+        <div class="flex flex-col space-y-4 p-6">
+            <a href="#overview" class="text-lg font-medium text-gray-700" onclick="toggleMenu()">Overview</a>
+            <a href="#floorplan" class="text-lg font-medium text-gray-700" onclick="toggleMenu()">Floor Plans</a>
+            <a href="#amenities" class="text-lg font-medium text-gray-700" onclick="toggleMenu()">Amenities</a>
+            <a href="#location" class="text-lg font-medium text-gray-700" onclick="toggleMenu()">Location</a>
+            <a href="#price" class="text-lg font-medium text-gray-700" onclick="toggleMenu()">Pricing</a>
+            <a href="#gallery" class="text-lg font-medium text-gray-700" onclick="toggleMenu()">Gallery</a> 
+            <button onclick="openModal()" class="btn-primary w-full">Enquire Now</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-6 py-6 w-full">
+            <div class="flex items-center">
+                <div class="text-white space-y-2 lg:w-[65%]">
+                    <!-- <div class="inline-block price-badge mb-2"></div> -->
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight md:mb-3">
+                        Assetz Mizumi Reserve
+                    </h1>
+                    <p class="text-lg text-gray-200 bg-[#2a496c] w-fit px-3 py-1 rounded">Kudlu, Harlur road Near HSR layout Road, Bangalore</p>
+                    <p class="text-lg text-gray-200 bg-[#2a496c] w-fit px-3 py-1 rounded">3 & 4 BHK Luxury Apartments</p>
+                    <p class="text-lg text-gray-200 bg-[#2a496c] w-fit px-3 py-1 rounded">● 80 Acres Development</p>
+                    <p class="text-lg text-gray-200 bg-[#2a496c] w-fit px-3 py-1 rounded">● Large Living Balconies up to 170 sft</p>
+                    <p class="text-lg text-gray-200 bg-[#2a496c] w-fit px-3 py-1 rounded">● 75%. Carpet area efficiency</p>
+                    <h4 class="text-xl md:text-2xl font-bold leading-tight gradient-gold text-white w-fit px-3 py-1 rounded">
+                        Starting Price : ₹ 2.39 Cr*
+                    </h4>
+                    <div class="flex flex-wrap gap-4">
+                        <button onclick="openModal()" class="btn-primary">Schedule Site Visit</button>
+                        <button onclick="openModal()" class="bg-white text-gray-800 px-8 py-3 rounded-full font-semibold hover:bg-gray-100">
+                            <i class="fas fa-download mr-2"></i>Download Brochure
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-3 gap-6 pt-6">
+                        <div class="flex flex-col  items-center">
+                            <p class="text-3xl font-bold text-white">704</p>
+                            <p class="text-sm text-gray-300">Total Units</p>
+                        </div>
+                        <div class="flex flex-col  items-center">
+                            <p class="text-3xl font-bold text-white">12</p>
+                            <p class="text-sm text-gray-300">Acres Phase 1 </p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <p class="text-3xl font-bold text-white">5</p>
+                            <p class="text-sm text-gray-300">Towers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block w-[35%]">
+                    <div class="bg-white rounded-3xl p-8 shadow-2xl">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Book Your Visit</h3>
+                        <form class="space-y-4" onsubmit="handleSubmit1(event)">
+                            <input id="name1" name="name" type="text" placeholder="Full Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#2a496c]" required>
+                            <div class="flex gap-1">
+                                <select 
+                                id="countryCode1"
+                                class="px-1 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#2a496c]">
+                                    <option value="+91">+91</option>
+                        <option value="+971">+971</option>
+                        <option value="+971">+44</option>
+                        <option value="+1">+1</option>
+                                </select>
+                                <input 
+                                id="phone1"
+                                type="tel" placeholder="Phone Number" class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#2a496c]" required>
+                            </div>
+                            <input 
+                            id="email1" name="email"
+                            type="email" placeholder="Email Address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#2a496c]" required>
+                            <button type="submit" id="submitBtn1" class="btn-primary w-full">Submit</button>
+                            <p class="text-xs text-gray-600 mt-3">
+                                <input type="checkbox" class="mr-2">
+                                I agree to receive updates via phone, email, and WhatsApp
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="section-title">Project Overview</h2>
+                <p class="text-gray-600 text-lg max-w-5xl mx-auto">
+                    Assetz Mizumi Reserve, an upcoming project in off Harlur road, Bangalore presents a unique residential development that changes the living style of how people live in Bangalore. The housing development offers more than typical homes by designing spaces based on what residents want and need.
+                </p>
+
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="feature-card card-hover text-center">
+                    <div class="amenity-icon mx-auto">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Location</h3>
+                    <p class="text-gray-600">Kudlu, Harlur road Near HSR layout Road, Bangalore</p>
+                </div>
+                <div class="feature-card card-hover text-center">
+                    <div class="amenity-icon mx-auto">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">5 Towers</h3>
+                    <p class="text-gray-600">2B + G + 22</p>
+                </div>
+                <div class="feature-card card-hover text-center">
+                    <div class="amenity-icon mx-auto">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Multiple Configs</h3>
+                    <p class="text-gray-600">3 & 4 BHK Luxury Apartments</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="section-title">World-Class Amenities</h2>
+                <p class="text-gray-600 text-lg">Everything you need for a premium lifestyle</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                <div class="bg-white rounded-xl p-6 text-center card-hover">
+                    <div class="amenity-icon mx-auto">
+                        <i class="fas fa-swimming-pool"></i>
+                    </div>
+                    <p class="font-medium text-gray-800">Swimming Pool</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 text-center card-hover">
+                    <div class="amenity-icon mx-auto">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <p class="font-medium text-gray-800">Gymnasium</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 text-center card-hover">
+                    <div class="amenity-icon mx-auto">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <p class="font-medium text-gray-800">Jogging Track</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 text-center card-hover">
+                    <div class="amenity-icon mx-auto">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <p class="font-medium text-gray-800">Sports Area</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 text-center card-hover">
+                    <div class="amenity-icon mx-auto">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <p class="font-medium text-gray-800">Kids Play Area</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 text-center card-hover">
+                    <div class="amenity-icon mx-auto">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <p class="font-medium text-gray-800">Landscaping</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 text-center card-hover">
+                    <div class="amenity-icon mx-auto">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <p class="font-medium text-gray-800">Clubhouse</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 text-center card-hover">
+                    <div class="amenity-icon mx-auto">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <p class="font-medium text-gray-800">24/7 Security</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 text-center card-hover">
+                    <div class="amenity-icon mx-auto">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <p class="font-medium text-gray-800">Parking</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 text-center card-hover">
+                    <div class="amenity-icon mx-auto">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <p class="font-medium text-gray-800">Power Backup</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Section -->
+    <section id="price" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="section-title">Pricing Plans</h2>
+                <p class="text-gray-600 text-lg">Flexible payment options tailored to your needs</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-white text-5xl mb-3">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">3 BHK </h3>
+                    </div>
+                    <div class="text-center py-4 border-t border-b border-gray-200 mb-4">
+                        <p class="text-3xl font-bold text-gray-800">₹ On Request</p>
+                    </div>
+                    <div class="text-center pb-4 border-b border-gray-200 my-4">
+                        <p class="text-xl font-bold text-gray-800">1900 Sq.Ft</p>
+                    </div>
+                    <button onclick="openModal()" class="btn-primary w-full">Get Price Details</button>
+                </div>
+                
+                <div class="feature-card card-hover border-2 border-[32a496c] relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-[#2a496c] text-white px-4 py-1 rounded-full text-sm font-semibold">Popular</span>
+                    </div>
+                    <div class="text-center mb-4">
+                        <div class="text-white text-5xl mb-3">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">3 BHK Large</h3>
+                    </div>
+                    <div class="text-center py-4 border-t border-b border-gray-200 my-4">
+                        <p class="text-3xl font-bold text-gray-800">₹ On Request</p>
+                    </div>
+                    <div class="text-center pb-4 border-b border-gray-200 my-4">
+                        <p class="text-xl font-bold text-gray-800">2165 Sq.Ft</p>
+                    </div>
+                    <button onclick="openModal()" class="btn-primary w-full">Get Price Details</button>
+                </div>
+                
+                <div class="feature-card card-hover">
+                    <div class="text-center mb-4">
+                        <div class="text-white text-5xl mb-3">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">4 BHK</h3>
+                    </div>
+                    <div class="text-center py-4 border-t border-b border-gray-200 my-4">
+                        <p class="text-3xl font-bold text-gray-800">₹ On Request</p>
+                    </div>
+                    <div class="text-center pb-4 border-b border-gray-200 my-4">
+                        <p class="text-xl font-bold text-gray-800">2476 Sq.Ft</p>
+                    </div>
+                    <button onclick="openModal()" class="btn-primary w-full">Get Price Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floor Plan Section -->
+<section id="floorplan" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+            <p class="text-sm [#2a496c] font-semibold mb-3">FLOOR PLANS</p>
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Your Vision, Our Floor Plans</h2>
+        </div>
+        
+        <!-- Floor Plan Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- 3 BHK Card -->
+            <div class="relative bg-white rounded-3xl overflow-hidden border-2 border-[#2a496c]">
+                <!-- BHK Badge -->
+                <div class="absolute -top-0.5 left-1/2 -translate-x-1/2 text-white gradient-gold font-semibold text-lg px-8 py-2 rounded-xl z-10">
+                    3 BHK
+                </div>
+                
+                <!-- Floor Plan Image Container -->
+                <div class="relative pt-[75%] blur-sm">
+                    <img src="./Assist/floorplan.webp" 
+                         alt="3 BHK Floor Plan" 
+                         class="absolute top-0 left-0 w-full h-full object-cover">
+                </div>
+                
+                <!-- View Plan Button -->
+                <button onclick="openModal()" class="absolute bottom-10 left-1/2 -translate-x-1/2 bg-white text-gray-800 text-lg font-semibold px-8 py-2 rounded-xl border-2 border-[#2a496c] hover:bg-gray-50 transition-all z-10">
+                    View Plan
+                </button>
+            </div>
+
+            <!-- 4 BHK Card -->
+            <div class="relative bg-white rounded-3xl overflow-hidden border-2 border-[#2a496c]">
+                <!-- BHK Badge -->
+                <div class="text-white absolute -top-0.5 left-1/2 -translate-x-1/2 gradient-gold font-semibold text-lg px-8 py-2 rounded-xl z-10">
+                    3 BHK Large
+                </div>
+                
+                <!-- Floor Plan Image Container -->
+                <div class="relative pt-[75%] blur-sm">
+                    <img src="./Assist/floorplan.webp" 
+                         alt="4 BHK Floor Plan" 
+                         class="absolute top-0 left-0 w-full h-full object-cover">
+                </div>
+                
+                <!-- View Plan Button -->
+                <button onclick="openModal()" class="absolute bottom-10 left-1/2 -translate-x-1/2 bg-white text-gray-800 text-lg font-semibold px-8 py-2 rounded-xl border-2 border-[#2a496c] hover:bg-gray-50 transition-all z-10">
+                    View Plan
+                </button>
+            </div>
+            <!-- 4 BHK Card -->
+            <div class="relative bg-white rounded-3xl overflow-hidden border-2 border-[#2a496c]">
+                <!-- BHK Badge -->
+                <div class="text-white absolute -top-0.5 left-1/2 -translate-x-1/2 gradient-gold font-semibold text-lg px-8 py-2 rounded-xl z-10">
+                    4 BHK
+                </div>
+                
+                <!-- Floor Plan Image Container -->
+                <div class="relative pt-[75%] blur-sm">
+                    <img src="./Assist/floorplan.webp" 
+                         alt="4 BHK Floor Plan" 
+                         class="absolute top-0 left-0 w-full h-full object-cover">
+                </div>
+                
+                <!-- View Plan Button -->
+                <button onclick="openModal()" class="absolute bottom-10 left-1/2 -translate-x-1/2 bg-white text-gray-800 text-lg font-semibold px-8 py-2 rounded-xl border-2 border-[#2a496c] hover:bg-gray-50 transition-all z-10">
+                    View Plan
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Gallery Section -->
+<section id="gallery" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                An Unforgettable Once-in-a-Lifetime Experience
+            </h2>
+        </div>
+        
+        <!-- Gallery Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            <!-- Large Image - Left -->
+            <div class="col-span-1 md:row-span-2">
+                <div class="h-full rounded-3xl overflow-hidden cursor-pointer transform hover:scale-[1.02] transition-transform duration-300" onclick="openImageModal('./Assist/building-exterior.jpg')">
+                    <img src="./Assist/galleryimg8.png" alt="Building Exterior" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <!-- Top Right Image -->
+            <div class="col-span-1 md:col-span-2">
+                <div class="h-full rounded-3xl overflow-hidden cursor-pointer transform hover:scale-[1.02] transition-transform duration-300" onclick="openImageModal('./Assist/living-room.jpg')">
+                    <img src="./Assist/galleryimg1.webp" alt="Living Room" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <!-- Bottom Left -->
+            <div class="col-span-1">
+                <div class="h-full rounded-3xl overflow-hidden cursor-pointer transform hover:scale-[1.02] transition-transform duration-300" onclick="openImageModal('./Assist/bedroom.jpg')">
+                    <img src="./Assist/galleryimg2.webp" alt="Bedroom" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <!-- Bottom Center -->
+            <div class="col-span-1">
+                <div class="h-full rounded-3xl overflow-hidden cursor-pointer transform hover:scale-[1.02] transition-transform duration-300" onclick="openImageModal('./Assist/lobby.jpg')">
+                    <img src="./Assist/galleryimg4.webp" alt="Lobby" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <!-- Large Image - Right -->
+            <div class="col-span-1 md:row-span-2">
+                <div class="h-full rounded-3xl overflow-hidden cursor-pointer transform hover:scale-[1.02] transition-transform duration-300" onclick="openImageModal('./Assist/interior.jpg')">
+                    <img src="./Assist/galleryimg5.webp" alt="Interior" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <div class="col-span-1 md:row-span-2">
+                <div class="h-full rounded-3xl overflow-hidden cursor-pointer transform hover:scale-[1.02] transition-transform duration-300" onclick="openImageModal('./Assist/interior.jpg')">
+                    <img src="./Assist/galleryimg6.webp" alt="Interior" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Image Modal -->
+<div id="imageModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden items-center justify-center p-4">
+    <div class="relative max-w-7xl max-h-[90vh] w-full">
+        <!-- Close Button -->
+        <button onclick="closeImageModal()" class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        
+        <!-- Modal Image -->
+        <img id="modalImage" src="" alt="Gallery Image" class="w-full h-full object-contain rounded-lg">
+        
+        <!-- Navigation Buttons -->
+        <button onclick="previousImage()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-4 rounded-full transition-all">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+        </button>
+        
+        <button onclick="nextImage()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-4 rounded-full transition-all">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </button>
+        
+        <!-- Image Counter -->
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded-full text-sm">
+            <span id="currentImageIndex">1</span> / <span id="totalImages">5</span>
+        </div>
+    </div>
+</div>
+
+    <!-- Location Section -->
+    <section id="location" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="section-title">Prime Location</h2>
+                <p class="text-gray-600 text-lg">Strategically located in Kudlu, Harlur road Near HSR layout Road, Bangalore</p>
+            </div>
+
+            <!-- Location Highlights -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-50 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                        <i class="fas fa-map-marker-alt text-white mr-3"></i>Nearby Landmarks
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-2 h-2 bg-yellow-600 rounded-full mt-2 mr-3"></div>
+                            <div>
+                                <p class="font-semibold text-gray-800">Electronic City</p>
+                                <p class="text-sm text-gray-600">5.8 km</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-2 h-2 bg-yellow-600 rounded-full mt-2 mr-3"></div>
+                            <div>
+                                <p class="font-semibold text-gray-800">HSR Layout</p>
+                                <p class="text-sm text-gray-600">5.7 km</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-2 h-2 bg-yellow-600 rounded-full mt-2 mr-3"></div>
+                            <div>
+                                <p class="font-semibold text-gray-800">BTM Layout</p>
+                                <p class="text-sm text-gray-600">9 km</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-2 h-2 bg-yellow-600 rounded-full mt-2 mr-3"></div>
+                            <div>
+                                <p class="font-semibold text-gray-800">Bellandur</p>
+                                <p class="text-sm text-gray-600">9.9 km</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-2 h-2 bg-yellow-600 rounded-full mt-2 mr-3"></div>
+                            <div>
+                                <p class="font-semibold text-gray-800">Apollo Hospital and Fortis Healthcare</p>
+                                <p class="text-sm text-gray-600">10 km</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-xl">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.349798292367!2d77.6560058!3d12.885214500000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13a369a8ed8b%3A0x726255ab484dc9f2!2sAssetz%20Codename%20Micropolis!5e0!3m2!1sen!2sin!4v1768757852573!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Developer Section -->
+    <section id="developer" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="section-title">About Assetz Property Group</h2>
+                <p class="text-gray-600 text-lg">A Legacy of Excellence in Real Estate</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <div class="bg-white rounded-2xl p-8 shadow-xl">
+                        <div class="w-24 h-24 gradient-gold rounded-2xl flex items-center justify-center mb-6">
+                            <span class="text-white font-bold text-4xl">A</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Assetz Property</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                         Assetz Property Group is a leading real estate developer in India, known for design-led development, sustainable practices, and global expertise. With nearly two decades of experience, Assetz has consistently delivered high-quality residential and commercial spaces that blend innovation, functionality, and long-term value.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-[#2a496c] rounded-lg p-4">
+                                <p class="text-3xl font-bold text-white mb-1">41+ Projects</p>
+                                <p class="text-sm text-white">Residential & Commercial Developments</p>
+                            </div>
+                            <div class="bg-[#2a496c] rounded-lg p-4">
+                                <p class="text-3xl font-bold text-white mb-1">43+ Million Sq. Ft.</p>
+                                <p class="text-sm text-white">Developed & Ongoing Projects</p>
+                            </div>
+                            <div class="bg-[#2a496c] rounded-lg p-4">
+                                <p class="text-3xl font-bold text-white mb-1">21,000+ Homes</p>
+                                <p class="text-sm text-white">Delivered & Underway</p>
+                            </div>
+                            <div class="bg-[#2a496c] rounded-lg p-4">
+                                <p class="text-3xl font-bold text-white mb-1">600+ Acres</p>
+                                <p class="text-sm text-white">Acquired and Licensed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 gradient-gold rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-award text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-2">Quality Assurance</h4>
+                                <p class="text-gray-600">Assetz Property is known for its in-house construction capabilities and backward integration, ensuring the highest quality standards in every project.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 gradient-gold rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-handshake text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-2">Trust & Transparency</h4>
+                                <p class="text-gray-600">With a strong reputation for timely delivery and transparent dealings, Assetz Property has earned the trust of thousands of homeowners across India.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 gradient-gold rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-leaf text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-2">Sustainable Development</h4>
+                                <p class="text-gray-600">Committed to eco-friendly practices and sustainable construction methods that harmonize with the environment.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 gradient-gold rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-star text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-2">Award-Winning Excellence</h4>
+                                <p class="text-gray-600">Recognized with numerous national and international awards for innovation, design, and customer satisfaction.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 gradient-gold">
+        <div class="max-w-5xl mx-auto px-6 text-center text-white">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Make This Your Home?</h2>
+            <p class="text-xl mb-8 opacity-90">Schedule a visit today and experience luxury living at its finest</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="openModal()" class="bg-white text-gray-800 px-10 py-4 rounded-full font-semibold text-lg hover:bg-gray-100">
+                    Schedule Site Visit
+                </button>
+                <a href="tel:+919071315001" class="bg-transparent border-2 border-white text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-gray-800">
+                    <i class="fas fa-phone mr-2"></i>Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-dark text-white py-2">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="space-y-4 py-5">
+                <p class="text-sm">
+                    Project Registered under Government of India RERA Act 2016 | www.rera.karnataka.gov.in
+                </p>
+                <p class="text-sm">
+                    Government RERA Authorised Advertiser’s: billionaire dream estate private limited, Registration No: PRM/KAR/ERA/1251/446/AG/250514/005727
+                </p>
+                <p class="text-sm">
+                    Project Registration No: Coming Soon
+                </p>
+                <p class="text-sm">
+                    Disclaimer: We're an authorized marketing channel partner (billionaire dream estate private limited). 
+                    The provided content, images & video are sourced from respective owners and are provided 
+                    only for information purposes, it does not constitute an offer to buy any service. 
+                    The price plans are subject to change without prior notice, and the properties mentioned 
+                    are subject to availability. You can receive a call, SMS, or emails on contact details 
+                    registered with us.
+                </p>
+            </div>
+            <div class="border-t flex flex-col md:flex-row justify-center border-gray-700 text-center text-gray-400 pt-2">
+                <!--<p class=' text-sm'>Developed and Marketing by <a href="https://www.mndigitalagency.com"-->
+                <!--        class=" text-blue-500">-->
+                <!--        M2N Digital Agency-->
+                <!--    </a>-->
+                <!--</p>-->
+                <div class="flex justify-center items-center gap-2 mt-2 text-sm">
+                <a href="/magnus/privacy-policy.html">Privacy Policy</a>
+                <a href="/magnus/terms-and-conditions.html">Terms and Conditions</a>
+            </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="enquiryModal" class="modal">
+        <div class="modal-content p-5 ">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <h3 class="text-2xl font-bold mb-6 text-gray-800">Get In Touch</h3>
+            <form onsubmit="handleSubmit(event)" class="space-y-4">
+                <input 
+                type="text" 
+                placeholder="Full Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#2a496c]" 
+                required
+                id="name"
+                >
+                <div class="flex gap-1 lg:gap-1">
+                    <select 
+                    id="countryCode"
+                    class="px-3 md:px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#2a496c]">
+                        <option value="+91">+91</option>
+                        <option value="+971">+971</option>
+                        <option value="+971">+44</option>
+                        <option value="+1">+1</option>
+                    </select>
+                    <input type="tel" id="phone" placeholder="Phone Number" class="flex-1 px-1 lg:px-2 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#2a496c]" required>
+                </div>
+                <input type="email" id="email" placeholder="Email Address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#2a496c]" required>
+                <button type="submit" id="submitbtn" class="btn-primary w-full">Submit Enquiry</button>
+            </form>
+            <div class="flex gap-3 mt-6">
+                <a href="https://wa.me/+919071315001?text=Hi!%20Im%20Interested%20In%20Mizumi%20Reserve%20Please%20Share%20Details." target="_blank" class="flex-1 bg-green-500 text-white py-3 rounded-lg text-center font-semibold hover:bg-green-600">
+                    <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                </a>
+                <a href="tel:+919071315001" class="flex-1 gradient-gold text-white py-3 rounded-lg text-center font-semibold hover:opacity-90">
+                    <i class="fas fa-phone mr-2"></i>Call Now
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/+919071315001?text=Hi!%20Im%20Interested%20In%20Mizumi%20Reserve%20Please%20Share%20Details." target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:bg-green-600 z-50">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <section class=" sticky bottom-0">
+        <div class="lg:hidden md:hidden flex justify-between items-center gradient-gold p-1.5">
+            <a href="tel:+918317452005" class="py-0.5 px-3 border-r-2 w-full text-center">
+                <i class='fa fa-phone-square text-white text-lg'></i>
+            </a>
+            <button onclick="openModal()" class="py-0.5 px-3 w-full text-center">
+                <i class="fa fa-envelope text-white text-md"></i>
+            </button>
+            <a href="https://wa.me/+919071315001?text=Hi!%20Im%20Interested%20In%20Mizumi%20Reserve%20Please%20Share%20Details."
+                target="_blank" class="py-0.5 px-3 border-l-2 w-full text-center">
+                <i class="fa fa-whatsapp text-[#9b6d07] bg-white p-0.5 rounded-sm"></i>
+            </a>
+        </div>
+    </section>
+
+    <script src="app.js"></script>    
+</body>
+</html>
