@@ -9,7 +9,7 @@ const ReraDisclaimer = () => {
           </span>{" "}
           Billionaire Dream Estate Pvt Ltd, Registration No:{" "}
           <span className="font-medium">
-            PRM/KA/RERA/1251/446/AG/180430/000889
+            PRM/KA/RERA/1251/446/AG/250514/005727
           </span>
         </p>
 
@@ -18,7 +18,7 @@ const ReraDisclaimer = () => {
             Project RERA Registration No:
           </span>{" "}
           <span className="font-medium">
-            PRM/KA/RERA/1251/310/PR/131025/008160
+            PRMKARERA1251310PR040226008450
           </span>
         </p>
 
