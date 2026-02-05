@@ -57,7 +57,7 @@ dialog::backdrop {
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --primary: #1683cb; 
+  --primary: #cb4e16; 
   --secondary: #1683cb; 
   --font-family: 'Inter', sans-serif; 
   --thirdry: linear-gradient(to right, #f864ba, #6dcdf3)
@@ -65,15 +65,15 @@ dialog::backdrop {
 /* linear-gradient(to right, #f864ba, #6dcdf3); */
 
 .some-class {
-  background: #1683cb
+  background: #cb4e16
 }
 
 .another-class {
-  background: linear-gradient(to bottom, #8f3569, #1face2);
+  background: linear-gradient(to bottom, #8f3569, #cb4e16);
 }
 
 .yet-another-class {
-  background: linear-gradient(to left, #8f3569, #1face2);
+  background: linear-gradient(to left, #8f3569, #cb4e16);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -101,8 +101,8 @@ body {
   width: 100%;
   /* height: 92vh; */
   background-image:
-      linear-gradient(to bottom, #0078db69, #0078db5e),
-      url('/heroimg2.png');
+      /* linear-gradient(to bottom, #cb4f1639, #e8a0033e), */
+      url('/heroimg3.webp');
   /* background-position: center; */
   /* background-position: center; */
   background-size: cover;

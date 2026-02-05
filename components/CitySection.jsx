@@ -1,79 +1,81 @@
-"use client"
-import React, { useEffect, useRef } from 'react'
-import CityCard from './CityCard';
+"use client";
+import React, { useRef } from "react";
+import CityCard from "./CityCard";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 function CitySection() {
-    const scrollRef = useRef(null);
-    const cityList = [
-        { cityName: "Bangalore", image: "/bangalore.jpg" },
-        { cityName: "Hyderabad", image: "/hyderabad.jpg" },
-        { cityName: "Mumbai", image: "/mumbai.jpg" },
-        { cityName: "Delhi", image: "/delhi.jpg" },
-        { cityName: "Noida", image: "/noida.jpg" },
-        { cityName: "Gurugram", image: "/gurugram.jpg" },
-    ];
-    const scrollLeft = () => {
-        if (scrollRef.current) {
-          scrollRef.current.scrollBy({ left: -320, behavior: "smooth" });
-        }
-      };
-    
-      const scrollRight = () => {
-        if (scrollRef.current) {
-          scrollRef.current.scrollBy({ left: 320, behavior: "smooth" });
-        }
-      };
+  const scrollRef = useRef(null);
+
+  const cityList = [
+    { cityName: "Bangalore", image: "/bangalore.jpg" },
+    { cityName: "Hyderabad", image: "/hyderabad.jpg" },
+    { cityName: "Mumbai", image: "/mumbai.jpg" },
+    { cityName: "Delhi", image: "/delhi.jpg" },
+    { cityName: "Noida", image: "/noida.jpg" },
+    { cityName: "Gurugram", image: "/gurugram.jpg" },
+  ];
+
+  const scrollLeft = () => {
+    scrollRef.current?.scrollBy({ left: -340, behavior: "smooth" });
+  };
+
+  const scrollRight = () => {
+    scrollRef.current?.scrollBy({ left: 340, behavior: "smooth" });
+  };
 
   return (
-    <div className="md:w-[90%] w-[95%] m-auto pt-8 pb-16">
-        <div className="flex flex-col justify-center">
-          <h5 className="text-center font-bold text-2xl lg:text-3xl text-black">
+    <section className="w-[95%] md:w-[90%] mx-auto py-16">
+      
+      {/* Heading */}
+      <div className="text-center">
+        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">
           Popular Choices
-          </h5>
-          <p className="text-center text-lg text-gray-700 mt-2">
-          Where your Dream Homes take shape!
+        </h2>
+        <p className="mt-2 text-gray-600 text-base lg:text-lg">
+          Where your dream homes take shape!
         </p>
-        </div>
+      </div>
 
-        <div className="mt-5 relative">
-          {/* Left Arrow */}
-          <div className="absolute top-1/2 left-0 transform -translate-y-1/2 z-10">
-            <button
-              className="bg-white text-black shadow-lg rounded-full p-2 text-2xl font-bold cursor-pointer"
-              onClick={scrollLeft}
-            >
-              <IoIosArrowBack />
-            </button>
-          </div>
+      {/* Slider */}
+      <div className="relative mt-10">
+        
+        {/* Left Arrow */}
+        <button
+          onClick={scrollLeft}
+          className="hidden md:flex items-center justify-center
+          absolute left-[-20px] top-1/2 -translate-y-1/2 z-10
+          w-11 h-11 rounded-full bg-white shadow-lg
+          text-xl text-gray-700 hover:bg-[var(--primary)]
+          hover:text-white transition"
+        >
+          <IoIosArrowBack />
+        </button>
 
-          {/* Right Arrow */}
-          <div className="absolute top-1/2 right-0 transform -translate-y-1/2 z-10">
-            <button
-              className="bg-white text-black shadow-lg rounded-full p-2 text-2xl font-bold cursor-pointer"
-              onClick={scrollRight}
-            >
-              <IoIosArrowForward />
-            </button>
-          </div>
+        {/* Right Arrow */}
+        <button
+          onClick={scrollRight}
+          className="hidden md:flex items-center justify-center
+          absolute right-[-20px] top-1/2 -translate-y-1/2 z-10
+          w-11 h-11 rounded-full bg-white shadow-lg
+          text-xl text-gray-700 hover:bg-[var(--primary)]
+          hover:text-white transition"
+        >
+          <IoIosArrowForward />
+        </button>
 
-          {/* Scrollable Container */}
-          <div
-            ref={scrollRef}
-            className="flex overflow-x-auto space-x-4 py-4 px-2"
-            style={{
-              scrollBehavior: "smooth",
-              scrollbarWidth: "none",
-              whiteSpace: "nowrap",
-            }}
-          >
-            {cityList.map((city, i) => (
-                <CityCard key={i} city={city} />
-            ))}
-          </div>
+        {/* Scroll Container */}
+        <div
+          ref={scrollRef}
+          className="flex gap-5 overflow-x-auto px-2 py-4"
+          style={{ scrollbarWidth: "none" }}
+        >
+          {cityList.map((city, index) => (
+            <CityCard key={index} city={city} />
+          ))}
         </div>
       </div>
-  )
+    </section>
+  );
 }
 
-export default CitySection
+export default CitySection;

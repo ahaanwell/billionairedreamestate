@@ -1,5 +1,5 @@
-"use client"
-import React, { useRef, useEffect, useState } from "react";
+"use client";
+import React, { useRef, useEffect } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import ProjectCard from "./ProjectCard";
 import propertiesData from "@/constants/propertiesData";
@@ -8,107 +8,75 @@ function ProjectSection() {
   const scrollRef = useRef(null);
   const autoScrollInterval = useRef(null);
 
-
-
-
-  // Duplicate data to create an infinite loop effect
+  // Duplicate data for seamless scroll
   const duplicatedData = [...propertiesData, ...propertiesData];
 
   const scrollLeft = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -320, behavior: "smooth" });
-    }
+    scrollRef.current?.scrollBy({ left: -340, behavior: "smooth" });
   };
 
   const scrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 320, behavior: "smooth" });
-    }
-  };
-
-  const startAutoScroll = () => {
-    autoScrollInterval.current = setInterval(() => {
-      if (scrollRef.current) {
-        const container = scrollRef.current;
-
-        if (container.scrollLeft >= container.scrollWidth / 2) {
-          // Reset scroll to start smoothly when it reaches the middle
-          container.scrollTo({ left: 0, behavior: "instant" });
-        } else {
-          container.scrollBy({ left: 320, behavior: "smooth" });
-        }
-      }
-    }, 1000);
+    scrollRef.current?.scrollBy({ left: 340, behavior: "smooth" });
   };
 
   useEffect(() => {
-
-    // startAutoScroll();
-
     return () => clearInterval(autoScrollInterval.current);
   }, []);
 
-  const stopAutoScroll = () => {
-    clearInterval(autoScrollInterval.current);
-  };
-
-  const resumeAutoScroll = () => {
-    startAutoScroll();
-  };
-
   return (
-    <div>
-      <div className="md:w-[90%] w-[95%] m-auto pt-8 pb-16">
-        <div className="flex flex-col justify-center">
-          <h5 className="text-center font-bold text-2xl lg:text-3xl text-black">
-          Premium Real Estate Properties in Bangalore
-          </h5>
-          <p className="text-center text-lg text-gray-700 mt-2">
-          Explore prime properties and picks for you!
+    <section className="py-20 bg-gray-50">
+      <div className="w-[95%] md:w-[90%] mx-auto">
+
+        {/* Heading */}
+        <div className="text-center max-w-3xl mx-auto">
+          <h2 className="text-2xl lg:text-4xl font-extrabold text-gray-900">
+            High-End Residential Properties in Bangalore
+          </h2>
+          <p className="mt-3 text-gray-600 text-base lg:text-lg">
+            Curated homes from trusted developers, crafted for comfort, investment, and lasting value.
           </p>
         </div>
-        <div className="mt-5 relative">
+
+        {/* Slider */}
+        <div className="relative mt-12">
+
           {/* Left Arrow */}
-          <div className="absolute top-1/2 left-0 transform -translate-y-1/2 z-10">
-            <button
-              className="bg-white text-black shadow-lg rounded-full p-2 text-2xl font-bold cursor-pointer"
-              onClick={scrollLeft}
-            >
-              <IoIosArrowBack />
-            </button>
-          </div>
+          <button
+            onClick={scrollLeft}
+            className="hidden md:flex items-center justify-center
+            absolute left-[-20px] top-1/2 -translate-y-1/2 z-10
+            w-11 h-11 rounded-full bg-white shadow-lg
+            text-xl text-gray-700 hover:bg-[var(--primary)]
+            hover:text-white transition"
+          >
+            <IoIosArrowBack />
+          </button>
 
           {/* Right Arrow */}
-          <div className="absolute top-1/2 right-0 transform -translate-y-1/2 z-10">
-            <button
-              className="bg-white text-black shadow-lg rounded-full p-2 text-2xl font-bold cursor-pointer"
-              onClick={scrollRight}
-            >
-              <IoIosArrowForward />
-            </button>
-          </div>
+          <button
+            onClick={scrollRight}
+            className="hidden md:flex items-center justify-center
+            absolute right-[-20px] top-1/2 -translate-y-1/2 z-10
+            w-11 h-11 rounded-full bg-white shadow-lg
+            text-xl text-gray-700 hover:bg-[var(--primary)]
+            hover:text-white transition"
+          >
+            <IoIosArrowForward />
+          </button>
 
-          {/* Scrollable Container */}
+          {/* Cards */}
           <div
             ref={scrollRef}
-            className="flex overflow-x-auto space-x-4 py-4 px-2"
-            // onMouseEnter={stopAutoScroll}
-            // onMouseLeave={resumeAutoScroll}
-            style={{
-              scrollBehavior: "smooth",
-              scrollbarWidth: "none",
-              whiteSpace: "nowrap",
-            }}
+            className="flex gap-6 overflow-x-auto px-2 py-4"
+            style={{ scrollbarWidth: "none" }}
           >
-            {duplicatedData?.map((project, i) => (
-            //   <div key={i} className="flex-shrink-0 w-[300px]">
-                <ProjectCard key={i} project={project} />
-            //   </div>
+            {duplicatedData?.map((project, index) => (
+              <ProjectCard key={index} project={project} />
             ))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

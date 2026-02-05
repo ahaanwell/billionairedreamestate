@@ -14,8 +14,8 @@ export default function Home() {
     <HeroSection/>
     <PropertyTypeSection/>
     <CitySection/>
-    <TrustedSection/>
     <ProjectSection/>
+    <TrustedSection/>
     <MiddleBannerSection/>
     {/* <ProjectSection/> */}
     <BottomBanner/>

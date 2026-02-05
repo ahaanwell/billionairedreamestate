@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { IoCloseSharp } from "react-icons/io5";
@@ -8,105 +7,96 @@ import { IoCloseSharp } from "react-icons/io5";
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  // Handle scrolling for sticky header
+
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 20);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Fetch city data only once on component mount
   return (
-    <div className={`w-full bg-[#008ac0] some-class lg:px-6 shadow fixed top-0 left-0 z-50`}>
-      <div className="py-2 flex justify-between items-center">
-        <div className="flex items-center pl-3 lg:pl-10 gap-6">
-          <div>
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 
+      ${scrolled ? "bg-[#cb4e16]/95 backdrop-blur shadow-lg" : "bg-[#cb4e16]"}`}
+    >
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <div className="flex items-center justify-between h-[60px]">
+          
+          {/* Logo + Country */}
+          <div className="flex items-center gap-6">
             <Link href="/">
               <img
                 src="/logo.png"
                 alt="Logo"
-                className="w-[150px]"
+                className="w-[140px] object-contain"
               />
-              {/* <span className="text-white font-bold text-4xl">BRIK</span>
-              <span>zy</span> */}
             </Link>
-          </div>
-          <div>
+
             <select
-              className="border-b-2 border-white rounded-b-xl bg-transparent px-4 py-1 focus:ring-black text-white focus:text-black text-lg focus:outline-none"
+              className="bg-transparent border-b border-white/60 text-white text-sm px-2 py-1 
+              focus:outline-none focus:text-black focus:bg-white rounded-md transition"
             >
               <option>India</option>
             </select>
           </div>
-        </div>
-        <div className="flex items-center gap-6">
-          <div className="lg:flex gap-4 text-white font-medium hidden">
-            <Link href={"/about"} className=" transition-colors duration-200">
-              About Us
-            </Link>
-            <Link href={"/contact"} className=" transition-colors duration-200">
-              Contact Us
-            </Link>
-            <Link href={"/career"} className=" transition-colors duration-200">
-              Career
-            </Link>
-          </div>
-          <div>
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white p-2 transition-colors duration-300 cursor-pointer"
-            >
-              <FaBarsStaggered size={24} />
-            </button>
-          </div>
+
+          {/* Desktop Links */}
+          <nav className="hidden lg:flex items-center gap-8 text-white font-medium">
+            {["Projects", "About", "Contact", "Career"].map((item) => (
+              <Link
+                key={item}
+                href={"#"}
+                className="relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] 
+                after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(true)}
+            className="text-white p-2 rounded-md hover:bg-white/10 transition"
+          >
+            <FaBarsStaggered size={22} />
+          </button>
         </div>
       </div>
-      {/* Mobile Menu */}
+
+      {/* Mobile Drawer */}
       <div
-        className={`bg-black fixed top-0 right-0 z-50 w-[300px] h-screen p-3 mobileNavlinkContainer transition-all duration-500 ease-in-out 
-                    ${isMenuOpen ? "transform translate-x-0 opacity-100" : "transform translate-x-full opacity-0"}`}
+        className={`fixed top-0 right-0 h-screen w-[300px] bg-[#0b0b0b] z-50 p-4 
+        transition-transform duration-500 ease-in-out
+        ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
       >
-        <div className="flex items-center justify-between border-b-3 border-gray-400 pb-3">
-          <img
-            src="/logo.png"
-            alt="Logo"
-            className="w-[150px]"
-          />
+        <div className="flex items-center justify-between border-b border-white/20 pb-4">
+          <img src="/logo.png" alt="Logo" className="w-[140px]" />
           <button
             onClick={() => setIsMenuOpen(false)}
-            className="text-white text-3xl font-semibold cursor-pointer"
+            className="text-white text-3xl hover:text-red-400 transition"
           >
             <IoCloseSharp />
           </button>
         </div>
-        <div>
-          <ul className="text-white flex flex-col z-50 gap-2 mt-4">
-            <li>
-              <Link href={"/about"} className="hover:text-yellow-300 transition-colors duration-200">
-                About Us
+
+        <ul className="mt-6 flex flex-col gap-4 text-white text-lg">
+          {["about", "contact", "career"].map((item) => (
+            <li key={item}>
+              <Link
+                href={`/${item}`}
+                onClick={() => setIsMenuOpen(false)}
+                className="block px-3 py-2 rounded-md hover:bg-white/10 transition"
+              >
+                {item.charAt(0).toUpperCase() + item.slice(1)}
               </Link>
             </li>
-            <li>
-              <Link href={"/contact"} className="hover:text-yellow-300 transition-colors duration-200">
-                Contact Us
-              </Link>
-            </li>
-            <li>
-              <Link href={"/career"} className="hover:text-yellow-300 transition-colors duration-200">
-                Career
-              </Link>
-            </li>
-          </ul>
-        </div>
+          ))}
+        </ul>
       </div>
-    </div>
+    </header>
   );
 }
 

@@ -1,4 +1,55 @@
 const propertiesData =  [
+  {
+  projectName: "Assetz Mizumi Reserve",
+  slug: "assetz-mizumi-reserve",
+  title: "Assetz Mizumi Reserve | Premium 3 & 4 BHK Luxury Apartments at Kudlu Gate, Bangalore",
+  metaDescription: "Discover Assetz Mizumi Reserve – premium 3 & 4 BHK luxury apartments at Kudlu Gate, Bangalore. A large township with expansive green spaces, modern amenities, excellent connectivity, and Assetz’s trusted quality. Starting from ₹2.38 Cr.",
+  overviewContent: "<p>Assetz Mizumi Reserve is a premium residential township located at Kudlu Gate / Harlur Road, Bangalore. Spread across vast acres with abundant greenery, the project offers a harmonious blend of luxury living, open spaces, and modern infrastructure designed for contemporary urban lifestyles.</p>",
+  amenitiesContent: "<p>Grand Clubhouse, Swimming Pool, Gymnasium, Jogging & Cycling Track, Children's Play Area, Indoor Games, Yoga & Meditation Deck, Sports Courts, Landscaped Gardens, Multipurpose Hall, Mini Theatre, Co-working Spaces, Senior Citizen Zone, 24/7 Security, Power Backup, Retail Spaces.</p>",
+  pricePlanContent: "<p>3 BHK: ₹2.38 - 2.91 Cr | 4 BHK: ₹3.09 - 3.29 Cr</p>",
+  locationContent: "<p>Kudlu Gate / Harlur Road, Bangalore – well connected to Electronic City, Sarjapur Road, HSR Layout, Outer Ring Road, and major IT hubs.</p>",
+  mainImage: "/assetz-mizumi-reserve.webp",
+  location: "Kudlu Gate, Bangalore",
+  mapLink: "",
+  city: "Bangalore",
+  price: "2.38 Cr*",
+  status: "Pre Launch",
+  about: "<p>Assetz Mizumi Reserve is an iconic luxury township by Assetz Property Group, offering spacious 3 & 4 BHK residences within a nature-centric community featuring premium amenities, expansive open spaces, and contemporary architecture.</p>",
+  projectType: "Residential Apartments",
+  noOfUnits: "700+",
+  noOfFloors: "G+18",
+  totalLandArea: "80 Acres",
+  sizeRange: "1,900 - 2,476 Sq. Ft.",
+  unitVariants: "3 & 4 BHK",
+  possessionTime: "2029",
+  towersAndBlocks: "Multiple Towers",
+  reraNo: "RERA Approval Pending",
+  developer: "Assetz Property Group",
+  pricePlan: [
+    { unitType: "3 BHK", price: "2.38 - 2.91 Cr*", area: "1900 - 2165" },
+    { unitType: "4 BHK", price: "3.09 - 3.29 Cr*", area: "2476" }
+  ],
+  gallery: [
+    "/assetz-mizumi-reserve.webp",
+    "https://res.cloudinary.com/dmz316wxm/image/upload/v1746809402/assetz_mizumi_reserve_2.jpg",
+    "https://res.cloudinary.com/dmz316wxm/image/upload/v1746809403/assetz_mizumi_reserve_3.jpg",
+    "https://res.cloudinary.com/dmz316wxm/image/upload/v1746809404/assetz_mizumi_reserve_4.jpg"
+  ],
+  faqList: [
+    {
+      question: "Where is Assetz Mizumi Reserve located?",
+      answer: "Assetz Mizumi Reserve is located at Kudlu Gate / Harlur Road in South-East Bangalore."
+    },
+    {
+      question: "What configurations are available at Assetz Mizumi Reserve?",
+      answer: "The project offers premium 3 & 4 BHK luxury apartments."
+    },
+    {
+      question: "What is the starting price of Assetz Mizumi Reserve?",
+      answer: "Prices start from approximately ₹2.38 Cr* for 3 BHK apartments."
+    }
+  ]
+},
     {
   projectName: "Sobha World City",
   slug: "sobha-world-city",

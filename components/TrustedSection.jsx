@@ -1,114 +1,87 @@
-import React from 'react'
+import React from "react";
 import { MdRealEstateAgent } from "react-icons/md";
 
 function TrustedSection() {
+  const features = [
+    {
+      title: "Explore Prime Neighborhoods",
+      desc: "Discover premium homes in the most sought-after locations, guided by trusted real estate experts.",
+    },
+    {
+      title: "Connect with Verified Agents",
+      desc: "Get matched with top-rated agents who understand your needs and simplify your buying journey.",
+    },
+    {
+      title: "Highly Rated Apartments",
+      desc: "Browse handpicked apartments with world-class amenities and excellent resale value.",
+    },
+    {
+      title: "Track Recent Property Sales",
+      desc: "Stay informed with the latest property transactions, price trends, and market insights.",
+    },
+  ];
+
   return (
-    <div className="some-class">
-    <div className="w-[90%] m-auto flex justify-between">
-        <div className="xl:w-[50%] w-[100%] pb-5">
-            <h3 className="text-4xl text-white font-bold mt-10">
-                Trusted by 100+ Million buyers
-            </h3>
-            <p className="text-white mt-2 font-medium">
-                We connect you directly to the person that knows the most about a property for sale, the listing agent
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
-                <div className="bg-white flex flex-col gap-4 shadow-lg p-6 rounded-xl h-fit">
-                    <div className="flex gap-2 items-center">
-                        <div>
-                        <p className=' text-white some-class text-3xl p-3 rounded-full'>
-                            <MdRealEstateAgent/>
-                            </p>
-                        </div>
-                        <div>
-                            <h4 className="text-xl font-bold text-black">
-                                Explore Great Neighborhoods
-                            </h4>
-                        </div>
-                    </div>
-                    <div>
-                        <p className="font-medium text-gray-600">
-                            Discover exceptional properties in prime locations with expert real estate guidance.
-                        </p>
-                    </div>
-                    <div>
-                        <button className="text-[#1face2] cursor-pointer font-medium">Learn more</button>
-                    </div>
+    <section className="some-class py-16">
+      <div className="w-[95%] md:w-[90%] mx-auto flex flex-col xl:flex-row gap-12 items-center">
+
+        {/* Left Content */}
+        <div className="xl:w-[55%] w-full">
+          <h2 className="text-3xl lg:text-4xl font-extrabold text-white leading-tight">
+            Trusted by Millions of <br /> Home Buyers Across India
+          </h2>
+
+          <p className="text-white/90 mt-4 text-lg">
+            We connect you directly with verified developers and experienced agents,
+            ensuring complete transparency and confidence in every property decision.
+          </p>
+
+          {/* Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            {features.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-6 shadow-lg 
+                hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="flex items-start gap-4">
+                  
+                  {/* Icon */}
+                  <div className="flex items-center justify-center 
+                    w-12 h-12 rounded-full some-class text-white text-2xl">
+                    <MdRealEstateAgent />
+                  </div>
+
+                  {/* Text */}
+                  <div>
+                    <h4 className="text-lg font-bold text-gray-900">
+                      {item.title}
+                    </h4>
+                    <p className="mt-2 text-gray-600 text-sm leading-relaxed">
+                      {item.desc}
+                    </p>
+                    <button className="mt-3 text-[var(--primary)] font-semibold hover:underline">
+                      Learn more
+                    </button>
+                  </div>
+
                 </div>
-                <div className="bg-white flex flex-col gap-4 p-6 rounded-xl h-fit shadow-lg">
-                    <div className="flex gap-2 items-center">
-                        <div>
-                        <p className=' text-white some-class text-3xl p-3 rounded-full'>
-                            <MdRealEstateAgent/>
-                            </p>
-                        </div>
-                        <div>
-                            <h4 className="text-xl font-bold text-black">
-                                Find the Best Agent for You
-                            </h4>
-                        </div>
-                    </div>
-                    <div>
-                        <p className="font-medium text-gray-600">
-                            Connect with top real estate agents for a seamless buying or selling experience.
-                        </p>
-                    </div>
-                    <div>
-                        <button className="text-[#1face2] cursor-pointer font-medium">Learn more</button>
-                    </div>
-                </div>
-                <div className="bg-white flex flex-col gap-4 p-6 rounded-xl h-fit shadow-lg">
-                    <div className="flex gap-2 items-center">
-                        <div>
-                        <p className=' text-white some-class text-3xl p-3 rounded-full'>
-                            <MdRealEstateAgent/>
-                            </p>
-                        </div>
-                        <div>
-                            <h4 className="text-xl font-bold text-black">
-                                Find highly rated apartments
-                            </h4>
-                        </div>
-                    </div>
-                    <div>
-                        <p className="font-medium text-gray-600">
-                            Explore top-rated apartments with premium amenities in the best locations.
-                        </p>
-                    </div>
-                    <div>
-                        <button className="text-[#1face2] cursor-pointer font-medium">Learn more</button>
-                    </div>
-                </div>
-                <div className="bg-white flex flex-col gap-4 p-6 rounded-xl h-fit shadow-lg">
-                    <div className="flex gap-2 items-center">
-                        <div>
-                        <p className=' text-white some-class text-3xl p-3 rounded-full'>
-                            <MdRealEstateAgent/>
-                            </p>
-                        </div>
-                        <div>
-                            <h4 className="text-xl font-bold text-black">
-                                Search Recent Property Sales
-                            </h4>
-                        </div>
-                    </div>
-                    <div>
-                        <p className="font-medium text-gray-600">
-                            Browse recent property sales to stay updated on market trends and prices.
-                        </p>
-                    </div>
-                    <div>
-                        <button className="text-[#1face2] cursor-pointer font-medium">Learn more</button>
-                    </div>
-                </div>
-            </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="trustedBox2 w-[50%] hidden xl:block">
-            <img className="mt-16" src="/trusted.webp" alt=""/>
+
+        {/* Right Image */}
+        <div className="xl:w-[45%] w-full hidden xl:flex justify-center">
+          <img
+            src="/trusted.webp"
+            alt="Trusted real estate platform"
+            className="max-w-full rounded-2xl shadow-xl"
+          />
         </div>
-    </div>
- </div>
-  )
+      </div>
+    </section>
+  );
 }
 
-export default TrustedSection
+export default TrustedSection;

@@ -6,7 +6,7 @@ import { IoCall } from "react-icons/io5";
 import { PiWhatsappLogoBold } from "react-icons/pi";
 import Link from "next/link";
 
-export default function FormModel({projectName}) {
+export default function FormModel({ projectName }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [leadData, setLeadData] = useState({
     name: "",
@@ -21,154 +21,156 @@ export default function FormModel({projectName}) {
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  if (isSubmitting) return;
+    e.preventDefault();
+    if (isSubmitting) return;
+    setIsSubmitting(true);
 
-  setIsSubmitting(true);
-
-  try {
-    const res = await fetch("/api/lead", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ...leadData,
-        projectName,
-      }),
-    });
-
-    if (res.ok) {
-
-      alert("Thank you! We will contact you soon.");
-      document.getElementById("formModel").close();
-      setLeadData({
-        name: "",
-        email: "",
-        number: "",
-        countryCode: "+91",
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...leadData, projectName }),
       });
-    } else {
-      alert("Something went wrong. Try again.");
-    }
-  } catch (err) {
-    setIsSubmitting(false);
-    alert("Server error. Try again later.");
-  }
-};
 
+      if (res.ok) {
+        alert("Thank you! Our expert will contact you shortly.");
+        document.getElementById("formModel").close();
+        setLeadData({
+          name: "",
+          email: "",
+          number: "",
+          countryCode: "+91",
+        });
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch {
+      alert("Server error. Please try later.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
-    <dialog
-      id="formModel"
-      className="modal modal-middle z-[9999]"
-    >
-      <div className="modal-box max-w-4xl p-0 rounded-none">
+    <dialog id="formModel" className="modal z-[9999]">
+      <div className="modal-box max-w-5xl p-0 rounded-2xl overflow-hidden">
 
         {/* Close */}
         <form method="dialog">
-          <button className="btn btn-sm btn-circle text-white cursor-pointer btn-ghost absolute right-3 top-3">
+          <button className="absolute right-4 top-4 text-black z-10 cursor-pointer">
             <ImCross />
           </button>
         </form>
 
-        {/* Header */}
-        <div className="bg-[var(--primary)] p-4">
-          <h3 className="text-center text-xl md:text-2xl font-semibold text-white">
-            {projectName || "Enquire Now For More Details"}
-          </h3>
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2">
 
-        {/* Body */}
-        <div className="flex flex-col md:flex-row bg-white">
+          {/* LEFT – VISUAL */}
+          <div className="relative bg-[url('/form-bg.jpg')] bg-cover bg-center min-h-[260px] md:min-h-full">
+            <div className="absolute inset-0 bg-black/60"></div>
 
-          {/* Left panel */}
-          <div className="hidden md:flex w-[25%] flex-col gap-6 bg-[#f9f9f9] p-4">
-            <div className="text-center">
-              <img src="/telephone-call.webp" className="w-12 mx-auto" />
-              <p className="text-xs mt-1">Instant Call Back</p>
-            </div>
-            <div className="text-center">
-              <img src="/house.webp" className="w-12 mx-auto" />
-              <p className="text-xs mt-1">Free Visit</p>
-            </div>
-            <div className="text-center">
-              <img src="/rupees.webp" className="w-12 mx-auto" />
-              <p className="text-xs mt-1">Unmatched Price</p>
+            <div className="relative z-10 p-8 flex flex-col justify-center h-full text-white">
+              <h3 className="text-2xl lg:text-3xl font-bold leading-snug">
+                {projectName || "Premium Homes Crafted for Modern Living"}
+              </h3>
+
+              <p className="mt-3 text-sm text-white/90">
+                Get complete project details, best price offers & priority site visit.
+              </p>
+
+              <div className="mt-6 space-y-3 text-sm">
+                <p>✔ Verified Projects</p>
+                <p>✔ Transparent Pricing</p>
+                <p>✔ Dedicated Relationship Manager</p>
+              </div>
             </div>
           </div>
 
-          {/* Form */}
-          <form className="w-full md:w-[75%] p-5 space-y-4">
-            <input
-              name="name"
-              required
-              placeholder="Name"
-              value={leadData.name}
-              onChange={handleChange}
-              className="w-full border-b border-black p-2 outline-none"
-            />
+          {/* RIGHT – FORM */}
+          <div className="p-8 bg-white">
+            <h4 className="text-xl font-semibold text-gray-900">
+              Request Call Back
+            </h4>
+            <p className="text-sm text-gray-600 mt-1">
+              Fill in your details & our expert will assist you
+            </p>
 
-            <div className="flex gap-2">
-              <select
-                name="countryCode"
-                value={leadData.countryCode}
+            <form onSubmit={handleSubmit} className="mt-6 space-y-5">
+              <input
+                name="name"
+                required
+                placeholder="Your Name"
+                value={leadData.name}
                 onChange={handleChange}
-                className="border-b border-black outline-none"
-              >
-                <option value="+91">+91 (IND)</option>
-                <option value="+971">+971 (UAE)</option>
-                <option value="+44">+44 (UK)</option>
-                <option value="+1">+1 (USA)</option>
-              </select>
+                className="w-full border border-gray-300 rounded-md px-4 py-2 outline-none focus:border-[var(--primary)]"
+              />
+
+              <div className="flex gap-3">
+                <select
+                  name="countryCode"
+                  value={leadData.countryCode}
+                  onChange={handleChange}
+                  className="border border-gray-300 rounded-md px-2 outline-none"
+                >
+                  <option value="+91">+91</option>
+                  <option value="+971">+971</option>
+                  <option value="+44">+44</option>
+                  <option value="+1">+1</option>
+                </select>
+
+                <input
+                  name="number"
+                  type="tel"
+                  required
+                  placeholder="Mobile Number"
+                  value={leadData.number}
+                  onChange={handleChange}
+                  className="flex-1 border border-gray-300 rounded-md px-4 py-2 outline-none focus:border-[var(--primary)]"
+                />
+              </div>
 
               <input
-                name="number"
+                name="email"
+                type="email"
                 required
-                type="tel"
-                placeholder="Mobile No"
-                value={leadData.number}
+                placeholder="Email Address"
+                value={leadData.email}
                 onChange={handleChange}
-                className="flex-1 border-b border-black p-2 outline-none"
+                className="w-full border border-gray-300 rounded-md px-4 py-2 outline-none focus:border-[var(--primary)]"
               />
-            </div>
 
-            <input
-              name="email"
-              required
-              type="email"
-              placeholder="E-Mail Address"
-              value={leadData.email}
-              onChange={handleChange}
-              className="w-full border-b border-black p-2 outline-none"
-            />
-
-            <button
-              onClick={handleSubmit}
-              type="submit"
-              className="bg-[var(--primary)] cursor-pointer text-white px-6 py-2 mx-auto block shadow-md"
-            >
-              {isSubmitting ? "Submitting..." : "Submit"}
-            </button>
-
-            {/* CTA buttons */}
-            <div className="flex justify-between pt-2">
-              <Link
-                href={`https://wa.me/919380660766?text=Hi!%20I%27m%20interested%20in%20${projectName}`}
-                target="_blank"
-                className="bg-[var(--primary)] text-white px-4 py-1 rounded flex items-center gap-1 text-sm"
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full cursor-pointer bg-[var(--primary)] text-white py-3 rounded-md font-semibold tracking-wide hover:opacity-90 transition"
               >
-                <PiWhatsappLogoBold />
-                WhatsApp
-              </Link>
+                {isSubmitting ? "Please wait..." : "Get Best Offers"}
+              </button>
 
-              <Link
-                href="tel:+919380660766"
-                className="bg-[var(--primary)] text-white px-4 py-1 rounded flex items-center gap-1 text-sm"
-              >
-                <IoCall />
-                Call Now
-              </Link>
-            </div>
-          </form>
+              {/* Quick actions */}
+              <div className="flex gap-3">
+                <Link
+                  href={`https://wa.me/919731759315?text=Hi,%20I%20am%20interested%20in%20${projectName}`}
+                  target="_blank"
+                  className="flex-1 flex items-center justify-center gap-2 border border-green-500 text-green-600 py-2 rounded-md text-sm font-medium"
+                >
+                  <PiWhatsappLogoBold />
+                  WhatsApp
+                </Link>
+
+                <Link
+                  href="tel:+919731759315"
+                  className="flex-1 flex items-center justify-center gap-2 border border-blue-500 text-blue-600 py-2 rounded-md text-sm font-medium"
+                >
+                  <IoCall />
+                  Call
+                </Link>
+              </div>
+
+              <p className="text-xs text-gray-500 text-center">
+                No spam. Your information is 100% secure.
+              </p>
+            </form>
+          </div>
         </div>
       </div>
     </dialog>

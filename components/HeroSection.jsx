@@ -1,59 +1,81 @@
-"use client"
-import { useRouter } from "next/navigation";
-import React, { useState, useEffect, useRef } from "react";
+"use client";
+import React from "react";
 import { IoSearch } from "react-icons/io5";
 
 function HeroSection() {
   return (
-    <div className="heroContainer w-full h-[40vh] sm:h-[40vh] md:h-[30vh] lg:h-[30vh] xl:h-[70vh] relative">
-      <div className="flex justify-center h-full w-full items-center">
-        <h3 className="text-center mt-5 lg:mt-0 text-shadow text-3xl lg:text-5xl font-extrabold text-white">
-          ACQUIRE HOMES DIRECTLY <br />
-          <span className="text-3xl py-1 px-5 rounded lg:bg-[var(--primary)]">
-            FROM DEVELOPERS
+    <section className="relative w-full h-[45vh] md:h-[35vh] xl:h-[75vh] heroContainer">
+      
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/40"></div>
+
+      {/* Heading */}
+      <div className="relative z-10 flex items-center justify-center h-full px-4">
+        <h1 className="text-center text-white font-extrabold leading-tight">
+          <span className="block text-3xl sm:text-4xl lg:text-6xl drop-shadow-lg">
+            Luxury Homes, Straight from
           </span>
-        </h3>
+          <span className="inline-block mt-2 px-6 py-2 rounded-full text-2xl sm:text-3xl lg:text-4xl bg-[var(--primary)] shadow-lg">
+          Trusted Developers
+          </span>
+        </h1>
       </div>
 
-      <div className="w-[100%] absolute bottom-[-33px] sm:bottom-[-60px] md:bottom-[-30px] lg:bottom-[-65px]">
-        <div className="lg:w-[80%] xl:w-[58%] w-[90%] m-auto bg-white shadow-md rounded-md z-50">
-          <div >
-            <div className="relative">
-              <div className="flex justify-center gap-2 px-3 lg:px-5 lg:pt-5 py-4 lg:py-0">
-                <input
-                  type="text"
-                  aria-label="Search projects"
-                  className="w-full p-2 lg:border-b-3 text-black border-thirdry rounded-sm outline-none"
-                  placeholder="Search Dream..."
-                />
-                <button
-                  className="hidden md:block some-class px-6 text-white rounded-4xl cursor-pointer"
-                  
-                >
-                  Search
-                </button>
-                <button
-                  className="block md:hidden some-class px-6 text-white rounded-4xl cursor-pointer"
-                  aria-label="Search"
-                >
-                  <IoSearch />
-                </button>
-              </div>
+      {/* Search Box */}
+      <div className="absolute left-0 right-0 -bottom-14 sm:-bottom-20 z-20">
+        <div className="w-[92%] lg:w-[80%] xl:w-[60%] mx-auto bg-white rounded-2xl shadow-2xl">
+          
+          {/* Search Row */}
+          <div className="flex items-center gap-3 px-4 lg:px-6 py-4">
+            <input
+              type="text"
+              aria-label="Search projects"
+              placeholder="Search projects, locations, developers..."
+              className="flex-1 text-gray-800 placeholder-gray-400 text-sm lg:text-base 
+              border-b-2 border-gray-200 focus:border-[var(--primary)] outline-none py-2"
+            />
 
-            </div>
-            <div className="lg:flex justify-between mt-4 text-sm text-gray-600 cursor-pointer hidden px-5 pb-5">
-              <span className="border py-1 px-3 rounded-full">Apartments</span>
-              <span className="border py-1 px-3 rounded-full">Villas</span>
-              <span className="border py-1 px-3 rounded-full">Plots</span>
-              <span className="border py-1 px-3 rounded-full">Ready To Move</span>
-              <span className="border py-1 px-3 rounded-full">Under Construction</span>
-              <span className="border py-1 px-3 rounded-full">New Launch</span>
-              <span className="border py-1 px-3 rounded-full">Upcoming</span>
-            </div>
+            <button
+              className="hidden md:flex items-center gap-2 px-6 py-2 cursor-pointer 
+              bg-[var(--primary)] text-white font-medium rounded-full hover:opacity-90 transition"
+            >
+              <IoSearch />
+              Search
+            </button>
+
+            <button
+              aria-label="Search"
+              className="md:hidden flex items-center justify-center 
+              bg-[var(--primary)] text-white w-10 h-10 rounded-full"
+            >
+              <IoSearch />
+            </button>
+          </div>
+
+          {/* Filters */}
+          <div className="hidden lg:flex flex-wrap gap-3 px-6 pb-5 text-sm">
+            {[
+              "Apartments",
+              "Villas",
+              "Plots",
+              "Ready To Move",
+              "Under Construction",
+              "New Launch",
+              "Upcoming",
+            ].map((item) => (
+              <span
+                key={item}
+                className="px-4 py-1.5 rounded-full border border-gray-200 
+                text-gray-600 hover:border-[var(--primary)] hover:text-[var(--primary)] 
+                transition cursor-pointer"
+              >
+                {item}
+              </span>
+            ))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

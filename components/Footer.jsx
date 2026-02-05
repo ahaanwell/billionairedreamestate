@@ -1,115 +1,132 @@
-import Link from 'next/link';
-import React from 'react';
-import { FaLocationDot,FaFacebookF,FaInstagram,FaXTwitter,FaLinkedinIn, FaRegCopyright } from "react-icons/fa6";
-import { IoCall,IoMail } from "react-icons/io5";
-
+import Link from "next/link";
+import React from "react";
+import {
+  FaLocationDot,
+  FaFacebookF,
+  FaInstagram,
+  FaXTwitter,
+  FaLinkedinIn,
+  FaRegCopyright,
+} from "react-icons/fa6";
+import { IoCall, IoMail } from "react-icons/io5";
 
 function Footer() {
-    const date = new Date();
-    const year = date.getFullYear();
+  const year = new Date().getFullYear();
+
   return (
     <>
-    <footer>
-        <div className="bg-[#161618]">
-            <div className="w-[90%] m-auto py-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-3 justify-between">
-                    <div>
-                        <h4 className="text-white text-xl font-medium">About Us</h4>
-                        <div className="text-gray-300 flex flex-col gap-3 mt-2">
-                           <p>
-                           At Livexcellence, we prioritize building reliable relationships and understanding each customer's needs to streamline buying or selling property. We are committed to excellence and dedicated to ensuring a seamless and impactful experience for every transaction.
-                           </p>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 className="text-white text-xl font-medium">Popular House</h4>
-                        <div className="text-gray-300 flex flex-col gap-3 mt-2">
-                        <Link href="#">#Apartments</Link>
-                        <Link href="#">#Land/Plots</Link>
-                            <Link href="#">#Villa</Link>
-                            <Link href="#">#Commercial</Link>
-                            <Link href="#">#Farm House</Link>
-                            <Link href="#">#Homestay</Link>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 className="text-white text-xl font-medium">Quick links</h4>
-                        <div className="text-gray-300 flex flex-col gap-3 mt-2">
-                            <Link href="#">About Us</Link>
-                            <Link href="/contact.html">Contact Us</Link>
-                            <Link href="#">Career</Link>
-                            <Link href="#">Terms of use</Link>
-                            <Link href="/privacy-policy">Privacy policy</Link>
-                            <Link href="/terms-and-conditions">Terms & Conditions</Link>
-                        </div>
-                    </div>
-                    <div>
-                        <img
-                        className="w-[180px] cursor-pointer" 
-                        src="/logo.png" alt=""/>
-                        <div className="text-gray-300 flex flex-col gap-5 mt-5">
-                            <div className="flex items-center gap-1">
-                                <span className='p-2 bg-[var(--primary)] rounded-full '>
-                                    <FaLocationDot />
-                                </span>
-                                <p>
-                                    No-11, 2nd Floor, Arya Hub, Whitefield, Bengaluru, Karnataka 560066
-                                </p>
-                            </div>
-                            <div className="flex items-center gap-1"> 
-                                <span className='p-2 bg-[var(--primary)] rounded-full '>
-                                    <IoCall />
-                                </span>
-                                <a href="">+91 931101119</a>
-                            </div>
-                            <div className="flex items-center gap-1"> 
-                            <span className='p-2 bg-[var(--primary)] rounded-full '>
-                                    <IoMail />
-                                </span>
-                                <a href="">info@livexcellence.in</a>
-                            </div>
-                        </div>
-                        <div className="mt-5 flex gap-4">
-                            <div className="flex items-center gap-1"> 
-                                <Link href="#" className='p-2 bg-[#1877F2] text-white rounded-full'>
-                                    <FaFacebookF/>
-                                </Link>
-                            </div>
-                            <div className="flex items-center gap-1"> 
-                                <Link href="" className='p-2 bg-[#e53d6f] text-white rounded-full'>
-                                <FaInstagram/>
-                                </Link>
-                            </div>
-                            <div className="flex items-center gap-1"> 
-                                <Link href="#" className='p-2 bg-[#0077B5] text-white rounded-full'>
-                                <FaLinkedinIn/>
-                                </Link>
-                            </div>
-                            <div className="flex items-center gap-1"> 
-                                <Link href="" className='p-2 bg-[#1DA1F2] text-white rounded-full'>
-                                <FaXTwitter/>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <footer className="bg-[#141416] text-gray-300">
+        <div className="w-[90%] max-w-7xl mx-auto py-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+            {/* About */}
+            <div>
+              <h4 className="text-white text-xl font-semibold mb-4">
+                About Billionaire Dream Estate
+              </h4>
+              <p className="text-sm leading-relaxed">
+                Billionaire Dream Estate Pvt Ltd is a trusted real estate
+                advisory platform helping buyers and investors discover premium
+                residential and commercial properties. We focus on transparency,
+                expertise, and personalized service to deliver confident real
+                estate decisions.
+              </p>
             </div>
+
+            {/* Property Types */}
+            <div>
+              <h4 className="text-white text-xl font-semibold mb-4">
+                Property Types
+              </h4>
+              <ul className="flex flex-col gap-3 text-sm">
+                <li><Link href="#">Apartments</Link></li>
+                <li><Link href="#">Villas</Link></li>
+                <li><Link href="#">Plots & Land</Link></li>
+                <li><Link href="#">Commercial Spaces</Link></li>
+                <li><Link href="#">Farm Houses</Link></li>
+                <li><Link href="#">Luxury Homes</Link></li>
+              </ul>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-white text-xl font-semibold mb-4">
+                Quick Links
+              </h4>
+              <ul className="flex flex-col gap-3 text-sm">
+                <li><Link href="#">About Us</Link></li>
+                <li><Link href="/contact">Contact Us</Link></li>
+                <li><Link href="#">Careers</Link></li>
+                <li><Link href="/privacy-policy">Privacy Policy</Link></li>
+                <li><Link href="/terms-and-conditions">Terms & Conditions</Link></li>
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <img
+                src="/logo.png"
+                alt="Billionaire Dream Estate"
+                className="w-[180px] mb-5"
+              />
+
+              <div className="flex flex-col gap-4 text-sm">
+                <div className="flex items-start gap-3">
+                  <span className="p-2 bg-[var(--primary)] rounded-full text-white">
+                    <FaLocationDot />
+                  </span>
+                  <p>
+                    2nd Floor, Aarathi Buildings, <br /> No.186, Muthanallur Cross Sarjapur, Bangalore 562125, India
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <span className="p-2 bg-[var(--primary)] rounded-full text-white">
+                    <IoCall />
+                  </span>
+                  <a href="tel: +919731759315">+91 97317 59315</a>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <span className="p-2 bg-[var(--primary)] rounded-full text-white">
+                    <IoMail />
+                  </span>
+                  <a href="mailto:info@billionairedreamestate.in">
+                    info@billionairedreamestate.in
+                  </a>
+                </div>
+              </div>
+
+              {/* Social Icons */}
+              <div className="flex gap-4 mt-6">
+                <Link href="#" className="p-2 bg-[#1877F2] rounded-full text-white">
+                  <FaFacebookF />
+                </Link>
+                <Link href="#" className="p-2 bg-[#E4405F] rounded-full text-white">
+                  <FaInstagram />
+                </Link>
+                <Link href="#" className="p-2 bg-[#0077B5] rounded-full text-white">
+                  <FaLinkedinIn />
+                </Link>
+                <Link href="#" className="p-2 bg-[#1DA1F2] rounded-full text-white">
+                  <FaXTwitter />
+                </Link>
+              </div>
+            </div>
+
+          </div>
         </div>
-    </footer>
-     <section>
-     <div className="bg-[#161618] border-t-2 border-gray-600">
-         <p className="py-4 text-white font-medium text-center flex justify-center items-center gap-2">
-            <span className='flex items-center gap-1'>
-                Copyright 
-                <FaRegCopyright/> {year}
-            </span>
-            Livexcellence Realty | All Rights Resevered
-            
+      </footer>
+
+      {/* Bottom Bar */}
+      <section className="bg-[#141416] border-t border-gray-700">
+        <p className="py-4 text-sm text-center text-gray-400 flex justify-center items-center gap-2">
+          <FaRegCopyright />
+          {year} Billionaire Dream Estate Pvt Ltd. All Rights Reserved.
         </p>
-     </div>
-  </section>
+      </section>
     </>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
