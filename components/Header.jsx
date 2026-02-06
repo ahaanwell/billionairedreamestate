@@ -86,7 +86,7 @@ function Header() {
           {["about", "contact", "career"].map((item) => (
             <li key={item}>
               <Link
-                href={`/${item}`}
+                href={"#"}
                 onClick={() => setIsMenuOpen(false)}
                 className="block px-3 py-2 rounded-md hover:bg-white/10 transition"
               >
