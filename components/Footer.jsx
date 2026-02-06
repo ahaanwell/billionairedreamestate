@@ -55,7 +55,7 @@ function Footer() {
               </h4>
               <ul className="flex flex-col gap-3 text-sm">
                 <li><Link href="#">About Us</Link></li>
-                <li><Link href="/contact">Contact Us</Link></li>
+                <li><Link href="#">Contact Us</Link></li>
                 <li><Link href="#">Careers</Link></li>
                 <li><Link href="/privacy-policy">Privacy Policy</Link></li>
                 <li><Link href="/terms-and-conditions">Terms & Conditions</Link></li>

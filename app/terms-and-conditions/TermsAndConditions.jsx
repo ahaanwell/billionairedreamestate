@@ -7,11 +7,11 @@ export default function TermsAndConditionsPage() {
         <p className="text-sm mb-6">Effective Date: 08 November 2025</p>
 
         <p className="mb-4">
-          RERA No: PRM/KA/RERA/1251/446/AG/180430/000889
+          RERA No: PRM/KA/RERA/1251/446/AG/250514/005727
         </p>
 
         <p className="mb-6">
-          Welcome to Liv Excellence. By accessing or using our website and
+          Welcome to Billionaire Dream Estate. By accessing or using our website and
           services, you agree to comply with the following Terms & Conditions.
           Please read them carefully before using our platform. If you do not
           agree with any part of these terms, please refrain from using our
@@ -39,7 +39,7 @@ export default function TermsAndConditionsPage() {
 
         <h2 className="text-xl font-semibold mb-2">3. RERA Compliance</h2>
         <p className="mb-6">
-          Liv Excellence is a RERA-registered real estate agent. All transactions
+          Billionaire Dream Estate is a RERA-registered real estate agent. All transactions
           and property marketing activities comply with applicable RERA
           regulations.
         </p>
@@ -56,7 +56,7 @@ export default function TermsAndConditionsPage() {
           5. Limitation of Liability
         </h2>
         <p className="mb-6">
-          Liv Excellence shall not be liable for any indirect, incidental, or
+          Billionaire Dream Estate shall not be liable for any indirect, incidental, or
           consequential damages resulting from the use of this website or our
           services.
         </p>
@@ -71,7 +71,7 @@ export default function TermsAndConditionsPage() {
         <h2 className="text-xl font-semibold mb-2">7. Intellectual Property</h2>
         <p className="mb-6">
           All text, graphics, logos, and images on this website are the property
-          of Liv Excellence or its licensors. Unauthorized reproduction or
+          of Billionaire Dream Estate or its licensors. Unauthorized reproduction or
           distribution of this content is prohibited.
         </p>
 

@@ -7,11 +7,11 @@ export default function PrivacyPolicyPage() {
         <p className="text-sm mb-6">Effective Date: 08 November 2025</p>
 
         <p className="mb-4">
-          Liv Excellence – RERA No: PRM/KA/RERA/1251/446/AG/180430/000889
+          Billionaire Dream Estate – RERA No: PRM/KA/RERA/1251/446/AG/250514/005727
         </p>
 
         <p className="mb-6">
-          Liv Excellence ("Liv Excellence" or "We") is a Real Estate Regulatory
+          Billionaire Dream Estate ("Billionaire Dream Estate" or "We") is a Real Estate Regulatory
           Authority (RERA) registered agent. We value your privacy and are
           committed to protecting your personal information. This Privacy Policy
           explains what data we collect, how we use it, who we share it with, and
@@ -50,7 +50,7 @@ export default function PrivacyPolicyPage() {
         </h2>
         <p className="mb-6">
           All property-related materials on this site are displayed under
-          agreements with respective developers. Liv Excellence has legal
+          agreements with respective developers. Billionaire Dream Estate has legal
           authority to market and generate leads for these projects.
         </p>
 
